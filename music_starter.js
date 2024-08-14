@@ -1,22 +1,28 @@
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-  background(20)
-  textFont('Verdana'); // please use CSS safe fonts
+  colorMode(HSB, 100)
+  background(255)
+  //textFont('Verdana'); // please use CSS safe fonts
   rectMode(CENTER)
-  textSize(24);
+  //textSize(24);
+  strokeWeight(9);
+  stroke(drum,80,80);
   
-  fill(255, 200, 0);
-  let eyeSize = map(drum,0,100,70,220)
-  ellipse (100,400,eyeSize,eyeSize)
-  ellipse (400, 400,eyeSize,eyeSize)
-  ellipse (250, 150,eyeSize,eyeSize)
-  ellipse (250, 650,eyeSize,eyeSize)
-  
-  fill(150, 70, 0);
-  let mouthSize = map (vocal,0,100,60,350)
-  rect (250, 400,80, mouthSize);
+  var  drumMap = map(drum, 0,100.30,90);
+  var lengthOfLine = 300;
+  var LineStart = 100;
+  var lineEnd = LineStart + lengthOfLine;
 
+  line(LineStart, 300, lineEnd, 300);
+  line(LineStart, 310, lineEnd, 310);
+  line(LineStart, 320, lineEnd, 320);
+
+
+  for(let i = 1; i < 6; i++){
+    let loopyY = y * i;
+    ellipse(400,loopyY , 100)
+  }
 }
 
 
