@@ -1,29 +1,66 @@
 
-// let img;
-// let firstRum = true
+let img;
+let firstRun = true
+let yMove = 0;
+
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-  createCanvas(800, 800);
+  if(firstRun){ 
+    img = loadImage('Plant.png');
+    firstRun = false;
+  }
+
+  
+
   colorMode(HSB, 100)
-  background(300);
+  //background(words,20,20);
 
-  // if(firstRum){
-  //   img = loadImage('Plant.png')
-  //   firstRum = false
-  // }
+  let MyBlue = color(94, 186, 209)
+  let MyYellow = color(209, 144, 94)
+
+  let interA = lerpColor(MyBlue,MyYellow,0.4)
+  
+
+
+  background(interA);
+
+
+  push();
+  scale(0.5);
+  image(img,0,0);
+
+  pop();
+
+  ellipse(10, yMove, 20, 20);
+
+  if (counter > 0) {
+    yMove = yMove + 1;
+    if (yMove > 400) {
+      yMove = 0;
+    }
+  }
+  else {
+    yMove = 0;
+  }
+
+
+  fill(255,0,0)
+
+  //// image fill the screen
 
 
 
-  //   Image(img,0,0);
+  //   
 }
 
 
+
+// //shape movement
 // var Xmove = 1;
 // function draw() {
 //   background(300);
 //   ellipse(10+Xmove,100,20,20);
-
 
 // Xmove = Xmove + 1;
 
@@ -33,9 +70,11 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 // }
 //
-  // //textFont('Verdana'); // please use CSS safe fonts
+
+
+  //textFont('Verdana'); // please use CSS safe fonts
   // rectMode(CENTER)
-  // //textSize(24);
+  //textSize(24);
   // strokeWeight(9);
   // stroke(drum,80,80);
   
