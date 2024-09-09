@@ -1,29 +1,59 @@
 
+// let img;
+// let firstRum = true
+
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
+  createCanvas(800, 800);
   colorMode(HSB, 100)
-  background(255)
-  //textFont('Verdana'); // please use CSS safe fonts
-  rectMode(CENTER)
-  //textSize(24);
-  strokeWeight(9);
-  stroke(drum,80,80);
-  
-  var  drumMap = map(drum, 0,100.30,90);
-  var lengthOfLine = 300;
-  var LineStart = 100;
-  var lineEnd = LineStart + lengthOfLine;
+  background(300);
 
-  line(LineStart, 300, lineEnd, 300);
-  line(LineStart, 310, lineEnd, 310);
-  line(LineStart, 320, lineEnd, 320);
+  // if(firstRum){
+  //   img = loadImage('Plant.png')
+  //   firstRum = false
+  // }
 
 
-  for(let i = 1; i < 6; i++){
-    let loopyY = y * i;
-    ellipse(400,loopyY , 100)
-  }
+
+  //   Image(img,0,0);
 }
+
+
+// var Xmove = 1;
+// function draw() {
+//   background(300);
+//   ellipse(10+Xmove,100,20,20);
+
+
+// Xmove = Xmove + 1;
+
+// if(Xmove > 200){
+//   Xmove = 0;
+// }
+
+// }
+//
+  // //textFont('Verdana'); // please use CSS safe fonts
+  // rectMode(CENTER)
+  // //textSize(24);
+  // strokeWeight(9);
+  // stroke(drum,80,80);
+  
+  // var drumMap = map(drum, 0,100, 30,90);
+  // var lengthOfLine = 300;
+  // var LineStart = 100;
+  // var lineEnd = LineStart + lengthOfLine;
+
+  // // line(LineStart, 300, lineEnd, 300);
+  // // line(LineStart, 310, lineEnd, 310);
+  // // line(LineStart, 320, lineEnd, 320);
+
+  // for(var i = 1; i <= drumMap; i++){
+    
+  //   var linestep = i * 10;
+  //   line (LineStart, linestep, lineEnd, linestep);
+  // }
+
 
 
 
