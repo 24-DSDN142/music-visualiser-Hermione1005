@@ -16,14 +16,14 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   colorMode(HSB, 100)
   //background(words,20,20);
 
-  let MyBlue = color(94, 186, 209)
-  let MyYellow = color(209, 144, 94)
+  // let MyBlue = color(160, 194, 250)
+  // let MyYellow = color(190, 250, 170)
 
-  let interA = lerpColor(MyBlue,MyYellow,0.4)
+  // let interA = lerpColor(MyBlue,MyYellow,0.2)
   
 
 
-  background(interA);
+  background(60,50,vocal);
 
 
   push();
@@ -31,9 +31,12 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   image(img,0,0);
 
   pop();
-
-  ellipse(10, yMove, 20, 20);
-
+  
+  fill(100);
+  ellipse(10, yMove, 5, 5);
+  ellipse(800, yMove, 5, 5);
+  ellipse(450, yMove, 5, 5);
+  
   if (counter > 0) {
     yMove = yMove + 1;
     if (yMove > 400) {
@@ -43,7 +46,18 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   else {
     yMove = 0;
   }
+  
+  ellipse(700, yMove, 5, 5);
 
+  if (counter > 0) {
+    yMove = yMove + 1;
+    if (yMove > 300) {
+      yMove = 0;
+    }
+  }
+  else {
+    yMove = 0;
+  }
 
   fill(255,0,0)
 
