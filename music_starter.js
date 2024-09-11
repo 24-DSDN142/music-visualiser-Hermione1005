@@ -2,6 +2,11 @@
 let img;
 let firstRun = true
 let yMove = 0;
+let yMove_2 = 0;
+let yMove_3 = 0;
+let yMove_4 = 0;
+let xMove = 0;
+
 
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
@@ -23,19 +28,23 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   
 
 
-  background(60,50,vocal);
+  // background(60,50,vocal);
+  background(10);
 
 
+  //image of the plant
   push();
   scale(0.5);
   image(img,0,0);
 
   pop();
   
+
+  //rain drop
   fill(100);
-  ellipse(10, yMove, 5, 5);
-  ellipse(800, yMove, 5, 5);
-  ellipse(450, yMove, 5, 5);
+  ellipse(100, yMove, 3, 3);
+  ellipse(800, yMove, 3, 3);
+  ellipse(450, yMove, 3, 3);
   
   if (counter > 0) {
     yMove = yMove + 1;
@@ -47,16 +56,65 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     yMove = 0;
   }
   
-  ellipse(700, yMove, 5, 5);
+  //another part of raindrop 2
+  ellipse(700, yMove_2, 3, 3);
 
   if (counter > 0) {
-    yMove = yMove + 1;
-    if (yMove > 300) {
-      yMove = 0;
+    yMove_2 = yMove_2 + 1;
+    if (yMove_2 > 200) {
+      yMove_2 = 1;
     }
   }
   else {
-    yMove = 0;
+    yMove_2 = 1;
+  }
+
+
+
+  //another part of raindrop 3
+  ellipse(300, yMove_3, 3, 3);
+
+  if (counter > 0) {
+    yMove_3 = yMove_3 + 1;
+    if (yMove_3 > 600) {
+      yMove_3 = 2;
+    }
+  }
+  else {
+    yMove_3 = 2;
+  }
+
+
+
+  //another part of raindrop 4
+  ellipse(500, yMove_4, 3, 3);
+
+  if (counter > 0) {
+    yMove_4 = yMove_4 + 1;
+    if (yMove_4 > 700) {
+      yMove_4 = 3;
+    }
+  }
+  else {
+    yMove_4 = 3;
+  }
+
+
+
+
+
+
+  // The mark of rain on the water
+  ellipse(500, 500, xMove, 10);
+
+  if (counter > 0) {
+    xMove = xMove + 1;
+    if (xMove > 100) {
+      xMove = 0;
+    }
+  }
+  else {
+    xMove = 0;
   }
 
   fill(255,0,0)
