@@ -6,7 +6,7 @@ let yMove_2 = 0;
 let yMove_3 = 0;
 let yMove_4 = 0;
 let xMove = 0;
-
+let seconds;
 
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
@@ -114,18 +114,21 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   }
 
 
+  seconds = counter / 60;
 
   // The mark of rain on the water
+  if (seconds % 5 == 0) {
   ellipse(500, 700, xMove, 10);
 
-  if (counter > 0) {
-    xMove = xMove + 0.2;
-    if (xMove > 100) {
-      xMove = 0;
-    }
+  //  if (counter > 0) {
+  //   xMove = xMove + 1;
+  //   if (xMove > 100) {
+  //     xMove = 0;
+  //   }
   }
   else {
     xMove = 0;
+  //}
   }
 
   fill(255,0,0)
