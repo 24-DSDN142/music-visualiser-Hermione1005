@@ -5,7 +5,11 @@ let yMove = 0;
 let yMove_2 = 0;
 let yMove_3 = 0;
 let yMove_4 = 0;
+let yMove_5 = 0;
+let yMove_6 = 0;
+let yMove_7 = 0;
 let xMove = 0;
+let xMove_a = 0;
 let seconds;
 
 
@@ -26,10 +30,22 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
   // let interA = lerpColor(MyBlue,MyYellow,0.2)
   
+  //background(interA)
+
+  //fill(255,0,0)
 
 
   // background(60,50,vocal);
   background(10);
+
+
+  // let bar_spacing = height / 20;
+  // let bar_height = width / 1;
+  // let bar_pos_y = width / 2;
+  // //bass bar is blue
+  // fill(50, 50, 240);
+  // rect(bar_pos_y, height / 50 + 0.1 * bar_spacing, 15 * bass, bar_height);
+
 
 
   //image of the plant
@@ -44,10 +60,10 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   fill(100);
   ellipse(100, yMove, 3, 3);
   ellipse(800, yMove, 3, 3);
-  ellipse(450, yMove, 3, 3);
+  
   
   if (counter > 0) {
-    yMove = yMove + 1;
+    yMove = yMove + drum;
     if (yMove > 400) {
       yMove = 0;
     }
@@ -60,7 +76,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   ellipse(700, yMove_2, 3, 3);
 
   if (counter > 0) {
-    yMove_2 = yMove_2 + 1;
+    yMove_2 = yMove_2 + drum;
     if (yMove_2 > 200) {
       yMove_2 = 1;
     }
@@ -69,13 +85,11 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     yMove_2 = 1;
   }
 
-
-
   //another part of raindrop 3
   ellipse(300, yMove_3, 3, 3);
 
   if (counter > 0) {
-    yMove_3 = yMove_3 + 1;
+    yMove_3 = yMove_3 + drum;
     if (yMove_3 > 600) {
       yMove_3 = 2;
     }
@@ -85,12 +99,12 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   }
 
 
-
   //another part of raindrop 4
   ellipse(500, yMove_4, 3, 3);
+  ellipse(450, yMove, 3, 3);
 
   if (counter > 0) {
-    yMove_4 = yMove_4 + 1;
+    yMove_4 = yMove_4 + drum;
     if (yMove_4 > 700) {
       yMove_4 = 3;
     }
@@ -101,40 +115,110 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 
   //another part of raindrop 5
-  ellipse(850, yMove_4, 3, 3);
+  ellipse(850, yMove_5, 3, 3);
 
   if (counter > 0) {
-    yMove_4 = yMove_4 + 1;
-    if (yMove_4 > 800) {
-      yMove_4 = 3;
+    yMove_5 = yMove_5 + drum;
+    if (yMove_5 > 800) {
+      yMove_5 = 4;
     }
   }
   else {
-    yMove_4 = 3;
+    yMove_5 = 4;
+  }
+
+  //another part of raindrop 6
+  ellipse(550, yMove_6, 3, 3);
+
+  if (counter > 0) {
+    yMove_6 = yMove_6 + drum;
+    if (yMove_6 > 900) {
+      yMove_6 = 5;
+    }
+  }
+  else {
+    yMove_6 = 5;
+  }
+
+  //another part of raindrop 7
+  ellipse(200, yMove_7, 3, 3);
+  ellipse(450, yMove_7, 3, 3);
+
+  if (counter > 0) {
+    yMove_7 = yMove_7 + drum;
+    if (yMove_7 > 1000) {
+      yMove_7 = 6;
+    }
+  }
+  else {
+    yMove_7 = 6;
   }
 
 
+  //Delay setting
   seconds = counter / 60;
 
   // The mark of rain on the water
-  if (seconds % 5 == 0) {
-  ellipse(500, 700, xMove, 10);
-
-  //  if (counter > 0) {
-  //   xMove = xMove + 1;
-  //   if (xMove > 100) {
-  //     xMove = 0;
-  //   }
+  if (counter > 100) {
+    xMove = xMove + drum;
+    if (xMove > 200) {
+      xMove = 0;
+    }
   }
   else {
     xMove = 0;
-  //}
   }
+  
+  noFill();
+  stroke(255)
+  ellipse(500, 700, xMove, 10);
+  ellipse(800, 300, xMove, 10);
+
+
+  // 
+  if (counter > 300) {
+    xMove_a = xMove_a + drum;
+    if (xMove_a > 200) {
+      xMove_a = 0;
+    }
+  }
+  else {
+    xMove_a = 0;
+  }
+
+  noFill();
+  stroke(255)
+  ellipse(300, 500, xMove, 10);
+
+
+  // if (seconds % 5 == 0) {
+  
+
+ 
+  // }
+  
+
+  // The mark of rain on the water 2
+  // ellipse(200, 700, xMove_1, 10);
+
+  // if (counter > 0) {
+  //   xMove_1 = xMove_1 + 1;
+  //   if (xMove_1 > 100) {
+  //     xMov_1 = 1;
+  //   }
+  // }
+  // else {
+  //   xMove_1 = 1;
+  // }
 
   fill(255,0,0)
 
   //// image fill the screen
-
+   
+ 
+  //fill(0);
+  // text("bass", bar_pos_y, height / 2 + 3 * bar_spacing + 8);
+ 
 
 
   //   
@@ -158,9 +242,9 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 //
 
 
-  //textFont('Verdana'); // please use CSS safe fonts
+  // textFont('Verdana'); // please use CSS safe fonts
   // rectMode(CENTER)
-  //textSize(24);
+  // textSize(24);
   // strokeWeight(9);
   // stroke(drum,80,80);
   
@@ -168,7 +252,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   // var lengthOfLine = 300;
   // var LineStart = 100;
   // var lineEnd = LineStart + lengthOfLine;
-
+  
   // // line(LineStart, 300, lineEnd, 300);
   // // line(LineStart, 310, lineEnd, 310);
   // // line(LineStart, 320, lineEnd, 320);
