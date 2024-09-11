@@ -100,15 +100,26 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   }
 
 
+  //another part of raindrop 5
+  ellipse(850, yMove_4, 3, 3);
 
+  if (counter > 0) {
+    yMove_4 = yMove_4 + 1;
+    if (yMove_4 > 800) {
+      yMove_4 = 3;
+    }
+  }
+  else {
+    yMove_4 = 3;
+  }
 
 
 
   // The mark of rain on the water
-  ellipse(500, 500, xMove, 10);
+  ellipse(500, 700, xMove, 10);
 
   if (counter > 0) {
-    xMove = xMove + 1;
+    xMove = xMove + 0.2;
     if (xMove > 100) {
       xMove = 0;
     }
