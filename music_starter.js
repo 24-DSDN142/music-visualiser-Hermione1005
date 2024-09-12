@@ -36,8 +36,34 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 
   // background(60,50,vocal);
-  background(10);
+  background(255,0,100);
 
+  push();
+  colorMode(RGB)
+
+  noStroke();
+  fill(51, 128, 176)
+  rect(0, 1024 - map(vocal, 0, 100, 0, 1024), 1024, map(vocal, 0, 100, 0, 1024))
+  
+  fill(129, 197, 240);
+  rect(0, 1024 - map(vocal, 0, 100, 0, 800), 1024, map(vocal, 0, 100, 0, 800))
+
+  fill(78, 155, 204);
+  rect(0, 1024 - map(vocal, 0, 100, 0, 600), 1024, map(vocal, 0, 100, 0, 600))
+
+  fill(129, 197, 240);
+  rect(0, 1024 - map(vocal, 0, 100, 0, 500), 1024, map(vocal, 0, 100, 0, 400))
+
+  fill(93, 186, 245);
+  rect(0, 1024 - map(vocal, 0, 100, 0, 400), 1024, map(vocal, 0, 100, 0, 400))
+
+  fill(166, 219, 252);
+  rect(0, 1024 - map(vocal, 0, 100, 0, 200), 1024, map(vocal, 0, 100, 0, 200))
+
+  fill(166, 219, 252);
+  rect(0, 1024 - map(vocal, 0, 100, 0, 100), 1024, map(vocal, 0, 100, 0, 200))
+
+  pop();
 
   // let bar_spacing = height / 20;
   // let bar_height = width / 1;
@@ -56,7 +82,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   pop();
   
 
-  //rain drop
+  //rain drop part 1
   fill(100);
   ellipse(100, yMove, 3, 3);
   ellipse(800, yMove, 3, 3);
@@ -267,37 +293,3 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 
 
-
-  // let bar_spacing = height / 10;
-  // let bar_height = width / 12;
-  // let bar_pos_x = width / 2;
-  
-  //  // vocal bar is red
-  //  fill(200, 0, 0);
-  //  rect(bar_pos_x, height / 2 + 1 * bar_spacing, 4 * vocal, bar_height);
-  //  fill(0);
-  //  text("vocals", bar_pos_x, height / 2 + 1 * bar_spacing + 8);
- 
-  //  // drum bar is green
-  //  fill(0, 200, 0);
-  //  rect(bar_pos_x, height / 2 + 2 * bar_spacing, 4 * drum, bar_height);
-  //  fill(0);
-  //  text("drums", bar_pos_x, height / 2 + 2 * bar_spacing + 8);
- 
-  //  // bass bar is blue
-  //  fill(50, 50, 240);
-  //  rect(bar_pos_x, height / 2 + 3 * bar_spacing, 4 * bass, bar_height);
-  //  fill(0);
-  //  text("bass", bar_pos_x, height / 2 + 3 * bar_spacing + 8);
- 
-  //  // other bar is white
-  //  fill(200, 200, 200);
-  //  rect(bar_pos_x, height / 2 + 4 * bar_spacing, 4 * other, bar_height);
-  //  fill(0);
-  //  text("other", bar_pos_x, height / 2 + 4 * bar_spacing + 8);
-  //  fill(255, 255, 0);
- 
-  //  // display "words"
-  //  textAlign(CENTER);
-  //  textSize(vocal);
-  //  text(words, width/2, height/3);
