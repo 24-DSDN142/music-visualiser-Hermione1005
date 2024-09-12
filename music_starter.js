@@ -22,7 +22,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
   
 
-  colorMode(HSB, 100)
+  colorMode(RGB)
   //background(words,20,20);
 
   // let MyBlue = color(160, 194, 250)
@@ -36,7 +36,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 
   // background(60,50,vocal);
-  background(255,0,100);
+  background(34, 114, 168);
 
   push();
   colorMode(RGB)
@@ -63,14 +63,10 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   fill(166, 219, 252);
   rect(0, 1024 - map(vocal, 0, 100, 0, 100), 1024, map(vocal, 0, 100, 0, 200))
 
-  pop();
+  fill(166, 219, 252);
+  rect(0, 1024 - map(vocal, 0, 100, 0, 100), 1024, map(vocal, 0, 100, 0, 200))
 
-  // let bar_spacing = height / 20;
-  // let bar_height = width / 1;
-  // let bar_pos_y = width / 2;
-  // //bass bar is blue
-  // fill(50, 50, 240);
-  // rect(bar_pos_y, height / 50 + 0.1 * bar_spacing, 15 * bass, bar_height);
+  pop();
 
 
 
