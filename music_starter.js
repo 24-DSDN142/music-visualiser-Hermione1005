@@ -20,53 +20,64 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     firstRun = false;
   }
 
-  
-
   colorMode(RGB)
-  //background(words,20,20);
-
-  // let MyBlue = color(160, 194, 250)
-  // let MyYellow = color(190, 250, 170)
-
-  // let interA = lerpColor(MyBlue,MyYellow,0.2)
-  
-  //background(interA)
-
-  //fill(255,0,0)
-
-
-  // background(60,50,vocal);
+  // background colour
   background(34, 114, 168);
-
-  push();
-  colorMode(RGB)
-
-  noStroke();
-  fill(51, 128, 176)
-  rect(0, 1024 - map(vocal, 0, 100, 0, 1024), 1024, map(vocal, 0, 100, 0, 1024))
   
-  fill(129, 197, 240);
-  rect(0, 1024 - map(vocal, 0, 100, 0, 800), 1024, map(vocal, 0, 100, 0, 800))
 
-  fill(78, 155, 204);
-  rect(0, 1024 - map(vocal, 0, 100, 0, 600), 1024, map(vocal, 0, 100, 0, 600))
+  // // Sliding color
+  // push();
+  // colorMode(RGB)
 
-  fill(129, 197, 240);
-  rect(0, 1024 - map(vocal, 0, 100, 0, 500), 1024, map(vocal, 0, 100, 0, 400))
+  // noStroke();
+  // fill(120, 194, 245)
+  // rect(0, 1024 - map(vocal, 0, 100, 0, 1200), 1024, map(vocal, 0, 100, 0, 1200))
+  
+  // fill(231, 255, 201)
+  // rect(0, 1024 - map(vocal, 0, 100, 0, 1060), 1024, map(vocal, 0, 100, 0, 1060))
+  
+  // noStroke();
+  // fill(51, 128, 176)
+  // rect(0, 1024 - map(vocal, 0, 100, 0, 1024), 1024, map(vocal, 0, 100, 0, 1024))
+  
+  // fill(129, 197, 240);
+  // rect(0, 1024 - map(vocal, 0, 100, 0, 800), 1024, map(vocal, 0, 100, 0, 800))
 
-  fill(93, 186, 245);
-  rect(0, 1024 - map(vocal, 0, 100, 0, 400), 1024, map(vocal, 0, 100, 0, 400))
+  // fill(204, 234, 255)
+  // rect(0, 1024 - map(vocal, 0, 100, 0, 720), 1024, map(vocal, 0, 100, 0, 720))
+  
+  // fill(78, 155, 204);
+  // rect(0, 1024 - map(vocal, 0, 100, 0, 600), 1024, map(vocal, 0, 100, 0, 600))
 
-  fill(166, 219, 252);
-  rect(0, 1024 - map(vocal, 0, 100, 0, 200), 1024, map(vocal, 0, 100, 0, 200))
+  // fill(255, 240, 201)
+  // rect(0, 1024 - map(vocal, 0, 100, 0, 560), 1024, map(vocal, 0, 100, 0, 560))
+  
+  // fill(129, 197, 240);
+  // rect(0, 1024 - map(vocal, 0, 100, 0, 500), 1024, map(vocal, 0, 100, 0, 400))
 
-  fill(166, 219, 252);
-  rect(0, 1024 - map(vocal, 0, 100, 0, 100), 1024, map(vocal, 0, 100, 0, 200))
+  // fill(85, 120, 89)
+  // rect(0, 1024 - map(vocal, 0, 100, 0, 450), 1024, map(vocal, 0, 100, 0, 450))
+  
+  // fill(93, 186, 245);
+  // rect(0, 1024 - map(vocal, 0, 100, 0, 400), 1024, map(vocal, 0, 100, 0, 400))
 
-  fill(166, 219, 252);
-  rect(0, 1024 - map(vocal, 0, 100, 0, 100), 1024, map(vocal, 0, 100, 0, 200))
+  // fill(166, 219, 252);
+  // rect(0, 1024 - map(vocal, 0, 100, 0, 200), 1024, map(vocal, 0, 100, 0, 200))
 
-  pop();
+  // fill(204, 234, 255)
+  // rect(0, 1024 - map(vocal, 0, 100, 0, 150), 1024, map(vocal, 0, 100, 0, 150))
+  
+  // fill(119, 194, 247);
+  // rect(0, 1024 - map(vocal, 0, 100, 0, 120), 1024, map(vocal, 0, 100, 0, 120))
+
+  // fill(204, 234, 255)
+  // rect(0, 1024 - map(vocal, 0, 100, 0, 100), 1024, map(vocal, 0, 100, 0, 100))
+  
+  // fill(156, 214, 255);
+  // rect(0, 1024 - map(vocal, 0, 100, 0, 50), 1024, map(vocal, 0, 100, 0, 50))
+
+  // pop();
+
 
 
 
@@ -80,9 +91,9 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
   //rain drop part 1
   fill(100);
+
   ellipse(100, yMove, 3, 3);
   ellipse(800, yMove, 3, 3);
-  
   
   if (counter > 0) {
     yMove = yMove + drum;
@@ -177,11 +188,10 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   }
 
 
-  //Delay setting
-  seconds = counter / 60;
 
-  // The mark of rain on the water
-  if (counter > 100) {
+  //Delay setting
+  // The ripples on the water
+  if (counter > 50) {
     xMove = xMove + drum;
     if (xMove > 200) {
       xMove = 0;
@@ -195,97 +205,9 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   stroke(255)
   ellipse(500, 700, xMove, 10);
   ellipse(800, 300, xMove, 10);
-
-
-  // 
-  if (counter > 300) {
-    xMove_a = xMove_a + drum;
-    if (xMove_a > 200) {
-      xMove_a = 0;
-    }
-  }
-  else {
-    xMove_a = 0;
-  }
-
-  noFill();
-  stroke(255)
   ellipse(300, 500, xMove, 10);
 
 
-  // if (seconds % 5 == 0) {
   
-
- 
-  // }
-  
-
-  // The mark of rain on the water 2
-  // ellipse(200, 700, xMove_1, 10);
-
-  // if (counter > 0) {
-  //   xMove_1 = xMove_1 + 1;
-  //   if (xMove_1 > 100) {
-  //     xMov_1 = 1;
-  //   }
-  // }
-  // else {
-  //   xMove_1 = 1;
-  // }
-
-  fill(255,0,0)
-
-  //// image fill the screen
-   
- 
-  //fill(0);
-  // text("bass", bar_pos_y, height / 2 + 3 * bar_spacing + 8);
- 
-
-
-  //   
 }
-
-
-
-// //shape movement
-// var Xmove = 1;
-// function draw() {
-//   background(300);
-//   ellipse(10+Xmove,100,20,20);
-
-// Xmove = Xmove + 1;
-
-// if(Xmove > 200){
-//   Xmove = 0;
-// }
-
-// }
-//
-
-
-  // textFont('Verdana'); // please use CSS safe fonts
-  // rectMode(CENTER)
-  // textSize(24);
-  // strokeWeight(9);
-  // stroke(drum,80,80);
-  
-  // var drumMap = map(drum, 0,100, 30,90);
-  // var lengthOfLine = 300;
-  // var LineStart = 100;
-  // var lineEnd = LineStart + lengthOfLine;
-  
-  // // line(LineStart, 300, lineEnd, 300);
-  // // line(LineStart, 310, lineEnd, 310);
-  // // line(LineStart, 320, lineEnd, 320);
-
-  // for(var i = 1; i <= drumMap; i++){
-    
-  //   var linestep = i * 10;
-  //   line (LineStart, linestep, lineEnd, linestep);
-  // }
-
-
-
-
 
